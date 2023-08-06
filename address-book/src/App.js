@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import LogicalNot from './LogicalNot';
+ 
 import "./App.css"
 
 function App() {
@@ -15,6 +17,9 @@ function App() {
     getUsers();
   }, []);
 
+    
+
+
   console.log(users);
 
   return (
@@ -24,7 +29,9 @@ function App() {
           <div class="main" key={user.id.value}>
              <img src={user.picture.thumbnail} />
             <h2>User: {user.name.first} {user.name.last}</h2>
-            <button>Show Details</button>
+            <div className="App mt-5">
+      <LogicalNot />
+    </div>
           </div>
         ))
       ) : (
